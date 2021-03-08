@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 4.9.2
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Tempo de geração: 08-Mar-2021 às 19:23
+- Versão do servidor: 10.4.10-MariaDB
+- versão do PHP: 7.1.33
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="aprendendo_php" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="alunos">
+                CREATE TABLE `alunos` (
+                  `id_aluno` int(11) NOT NULL AUTO_INCREMENT,
+                  `nome_aluno` varchar(255) NOT NULL,
+                  `data_nascimento` varchar(255) DEFAULT NULL,
+                  PRIMARY KEY (`id_aluno`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="alunos_cursos">
+                CREATE TABLE `alunos_cursos` (
+                  `id_aluno_curso` int(11) NOT NULL AUTO_INCREMENT,
+                  `id_aluno` int(11) NOT NULL,
+                  `id_curso` int(11) NOT NULL,
+                  PRIMARY KEY (`id_aluno_curso`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="cursos">
+                CREATE TABLE `cursos` (
+                  `nome_curso` varchar(255) DEFAULT NULL,
+                  `carga_horaria` varchar(20) DEFAULT NULL,
+                  `id_curso` int(11) NOT NULL AUTO_INCREMENT,
+                  PRIMARY KEY (`id_curso`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="usuarios">
+                CREATE TABLE `usuarios` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `usuario` varchar(255) NOT NULL,
+                  `senha` varchar(255) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `usuario` (`usuario`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Banco de dados: 'aprendendo_php'
+    -->
+    <database name="aprendendo_php">
+        <!-- Tabela alunos -->
+        <table name="alunos">
+            <column name="id_aluno">1</column>
+            <column name="nome_aluno">Andre</column>
+            <column name="data_nascimento">01-01-1991</column>
+        </table>
+        <table name="alunos">
+            <column name="id_aluno">2</column>
+            <column name="nome_aluno">Maria</column>
+            <column name="data_nascimento">01-04-1991</column>
+        </table>
+        <table name="alunos">
+            <column name="id_aluno">3</column>
+            <column name="nome_aluno">Victor</column>
+            <column name="data_nascimento">29-12-1999</column>
+        </table>
+        <table name="alunos">
+            <column name="id_aluno">5</column>
+            <column name="nome_aluno">Luan</column>
+            <column name="data_nascimento">03-05-2003</column>
+        </table>
+        <!-- Tabela alunos_cursos -->
+        <table name="alunos_cursos">
+            <column name="id_aluno_curso">2</column>
+            <column name="id_aluno">3</column>
+            <column name="id_curso">1</column>
+        </table>
+        <table name="alunos_cursos">
+            <column name="id_aluno_curso">4</column>
+            <column name="id_aluno">3</column>
+            <column name="id_curso">7</column>
+        </table>
+        <table name="alunos_cursos">
+            <column name="id_aluno_curso">5</column>
+            <column name="id_aluno">3</column>
+            <column name="id_curso">2</column>
+        </table>
+        <table name="alunos_cursos">
+            <column name="id_aluno_curso">6</column>
+            <column name="id_aluno">1</column>
+            <column name="id_curso">6</column>
+        </table>
+        <!-- Tabela cursos -->
+        <table name="cursos">
+            <column name="nome_curso">PHP E MYSQL</column>
+            <column name="carga_horaria">10</column>
+            <column name="id_curso">3</column>
+        </table>
+        <table name="cursos">
+            <column name="nome_curso">Python</column>
+            <column name="carga_horaria">12</column>
+            <column name="id_curso">5</column>
+        </table>
+        <table name="cursos">
+            <column name="nome_curso">PHP</column>
+            <column name="carga_horaria">60</column>
+            <column name="id_curso">7</column>
+        </table>
+        <table name="cursos">
+            <column name="nome_curso">Português</column>
+            <column name="carga_horaria">60</column>
+            <column name="id_curso">8</column>
+        </table>
+        <!-- Tabela usuarios -->
+        <table name="usuarios">
+            <column name="id">1</column>
+            <column name="usuario">admin</column>
+            <column name="senha">123</column>
+        </table>
+        <table name="usuarios">
+            <column name="id">2</column>
+            <column name="usuario">Victor</column>
+            <column name="senha">123456</column>
+        </table>
+    </database>
+</pma_xml_export>
